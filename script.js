@@ -81,4 +81,56 @@ function updateCountdown() {
 // ✅ อัปเดตทุกวินาที
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
 });
+// ✅ ตั้งค่า Swiper (ตัวเลื่อนภาพ)
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+// ✅ ทำให้รูปขยายใหญ่เมื่อคลิก
+document.querySelectorAll('.zoomable').forEach(img => {
+    img.addEventListener('click', function() {
+        document.getElementById('popupImg').src = this.src;
+        document.getElementById('imagePopup').style.display = 'flex';
+    });
+});
+
+// ✅ คลิกที่ Pop-up เพื่อปิด
+document.getElementById('imagePopup').addEventListener('click', function() {
+    this.style.display = 'none';
+});
+// ปรับให้หัวใจลอยเร็วขึ้น
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 1.5 + 1.5 + "s"; // (2s แทน 3s)
+    document.getElementById("heart-container").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 2000);
+}
+setInterval(createHeart, 300); // เร็วขึ้นจาก 500ms → 400ms
+
+// ปรับให้เปลี่ยนรูปเร็วขึ้น
+const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+let currentIndex = 0;
+const sliderImage = document.getElementById("sliderImage");
+
+function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    sliderImage.style.opacity = 0;
+
+    setTimeout(() => {
+        sliderImage.src = images[currentIndex];
+        sliderImage.style.opacity = 1;
+    }, 200); // เปลี่ยนเร็วขึ้นจาก 500ms → 300ms
+}
+setInterval(changeImage, 1000); // เปลี่ยนรูปเร็วขึ้น (จาก 3s → 2s)

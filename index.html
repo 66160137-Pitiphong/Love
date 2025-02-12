@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>บอกรักแฟน</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎀 รักแฟนที่สุดเลย 🎀</h1>
-        <img src="IMG_9794.jpg" alt="รูปภาพคู่รัก" class="love-img">
+        <h1>🎀 รักแฟนที่สุดเลย 🎀</h1> 
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="IMG_8169.jpg" alt="รูปที่ 1" class="zoomable"></div>
+                <div class="swiper-slide"><img src="IMG_8400.png" alt="รูปที่ 2" class="zoomable"></div>
+                <div class="swiper-slide"><img src="IMG_2866.jpg" alt="รูปที่ 3" class="zoomable"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
              <!-- 🎵 ตัวเล่นเพลง -->
              <audio controls>
                 <source src="GAVIN.D A ROCKET TO THE MOON「Official MV」.mp3" type="audio/mpeg">
             </audio>  
+            <div id="heart-container"></div>         
         <p>🎊 เลือกหน้าที่ต้องการดู: 🎊</p>
         <div class="btn-group">
             <a href="image.html" class="btn">💖 รูปคู่ 💖</a>
@@ -21,6 +30,7 @@
             <a href="memory.html" class="btn">🌟 ความทรงจำดีๆ 🌟</a>    
             <a href="surprise.html" class="btn">🎨 เซอร์ไพรส์ 🎨</a>
         </div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script src="script.js"></script>
 </body>
 </html>
