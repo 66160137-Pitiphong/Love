@@ -115,4 +115,46 @@ p {
     background: #e63946;
     transform: translateY(-3px); /* ขยับขึ้นนิดหน่อย */
 }
+.envelope {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+#surpriseText {
+    font-size: 40px; /* ขนาดใหญ่ */
+    font-weight: bold; /* หนา */
+    color: #ff477e; /* สีชมพูสดใส */
+    text-shadow: 3px 3px 5px rgba(255, 71, 126, 0.5); /* เงาน่ารัก */
+    animation: popText 1s ease-in-out infinite alternate; /* ทำให้เด้งเบา ๆ */
+}
 
+/* เอฟเฟกต์ตัวหนังสือเด้ง */
+@keyframes popText {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+#surpriseImage {
+    width: 250px; /* ขนาดใหญ่ขึ้น */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ทำให้รูปขยายขึ้นเมื่อแสดง */
+#surpriseContainer.show #surpriseImage {
+    transform: scale(1.1);
+}
+
+#surpriseImage {
+    width: 180px; /* กำหนดความกว้าง */
+    max-width: 100%; /* ป้องกันรูปใหญ่เกินไป */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}

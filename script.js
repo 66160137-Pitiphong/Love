@@ -8,24 +8,35 @@ document.addEventListener("DOMContentLoaded", function () {
         const now = new Date();
         const timeDiff = now - startDate; // ⏳ เวลาที่ผ่านไป (มิลลิวินาที)
 
-        // คำนวณ วัน ชั่วโมง นาที วินาที
+        // คำนวณวัน ชั่วโมง นาที วินาที
         const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
         const seconds = Math.floor((timeDiff / 1000) % 60);
 
-        console.log(`💖 คบกันมาแล้ว: ${days} วัน ${hours}:${minutes}:${seconds}`);
-
-        // ✅ อัปเดตค่าใน HTML
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+        // ✅ ตรวจสอบว่ามี element ใน HTML ก่อนที่จะอัปเดตค่า
+        if (document.getElementById("days")) {
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+        }
     }
 
-    // 🕒 เรียกใช้งานครั้งแรก
+    // ✅ เรียกใช้งานครั้งแรก
     updateDaysTogether();
 
-    // ✅ อัปเดตทุกวินาที
+    // ⏳ อัปเดตทุกวินาที
     setInterval(updateDaysTogether, 1000);
+    const surpriseBtn = document.getElementById("surpriseBtn");
+    const surpriseContainer = document.getElementById("surpriseContainer");
+
+    if (surpriseBtn && surpriseContainer) {
+        surpriseBtn.addEventListener("click", function () {
+            surpriseContainer.style.display = "block"; // แสดงข้อความและรูปภาพ
+            surpriseContainer.classList.add("show"); // เพิ่มเอฟเฟกต์ให้รูปขยายขึ้น
+        });
+    } else {
+        console.error("❌ ไม่พบปุ่มหรือที่แสดงเซอร์ไพรส์");
+    }
 });
