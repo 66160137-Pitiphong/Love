@@ -29,8 +29,19 @@ p {
     color: #555;
 }
 
-.btn-group {
-    margin-top: 20px;
+/* ✅ แก้ไข: จัดรูปภาพเป็น 2 คอลัมน์ */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* ระยะห่างระหว่างรูป */
+    margin: 20px 0;
+}
+
+.love-img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
@@ -38,11 +49,12 @@ p {
     background: #ff477e;
     color: white;
     padding: 12px;
-    margin: 10px;
+    margin: 10px auto;
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
     transition: 0.3s;
+    max-width: 200px;
 }
 
 .btn:hover {
