@@ -414,3 +414,24 @@ body {
     50% { transform: translateY(-100px) scale(1.2); opacity: 1; }
     100% { transform: translateY(-200px) scale(1); opacity: 0; }
 }
+h1, #days-counter {
+    color: #ff477e; /* สีแดง */
+}
+
+p {
+    color: #ff477e; /* สีแดง */
+    font-weight: bold;
+}
+
+span, .time-text {
+    color: #ff477e; /* สีแดง */
+}
+
+.emoji {
+    color: #e63946; /* สีแดง */
+}
+
+/* ถ้ามีข้อความที่ต้องการเปลี่ยนสีเพิ่มเติม */
+.custom-text {
+    color: #e63946;
+}
